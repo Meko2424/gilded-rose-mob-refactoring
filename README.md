@@ -1,30 +1,78 @@
-# Gilded Rose starting position in Java
+# Gilded Rose Mob Refactoring
 
-## Run the TextTest Fixture from Command-Line
+## Team Members
+- April Breedlove
+- Antoine Davis
+- Joseph Pentecost
+- Mekonnen Kindo
 
+## Project Overview
+
+This repository contains our solution to the Gilded Rose Refactoring Kata. The objective is to safely refactor legacy Java code by first creating characterization tests, improving code quality, and implementing new functionality using Test-Driven Development (TDD).
+
+## Technologies
+
+- Java
+- JUnit 5
+- Maven
+- Gradle (starter project)
+- GitHub
+- IntelliJ IDEA
+
+## Collaboration Tools
+
+Our team used the following tools:
+
+- GitHub for version control and collaboration
+- Microsoft Teams for mob programming sessions and team communication
+- IntelliJ IDEA IDE to write, debug, test, and maintain code efficiently
+
+## Rationale
+
+These tools allowed our geographically distributed team to collaborate in real time, closely simulating face-to-face mob programming.
+
+## How to Run the Project
+
+Using Maven:
+
+```bash
+mvn test
 ```
-./gradlew -q text
+
+or
+
+```bash
+./mvnw test
 ```
 
-### Specify Number of Days
+Using Gradle:
 
-For e.g. 10 days:
-
-```
-./gradlew -q text --args 10
+```bash
+./gradlew test
 ```
 
-You should make sure the gradle commands shown above work when you execute them in a terminal before trying to use TextTest (see below).
+## Code Coverage
 
+A screenshot of the code coverage is included as:
 
-## Run the TextTest approval test that comes with this project
+`code-coverage.png`
 
-There are instructions in the [TextTest Readme](../texttests/README.md) for setting up TextTest. What's unusual for the Java version is there are two executables listed in [config.gr](../texttests/config.gr) for Java. The first uses Gradle wrapped in a python script. Uncomment these lines to use it:
+## Test Results
 
-    executable:${TEXTTEST_HOME}/Java/texttest_rig.py
-    interpreter:python
+The test execution results are included as:
 
-The other relies on your CLASSPATH being set correctly in [environment.gr](../texttests/environment.gr). Uncomment these lines to use it instead:
+`test-results.png`
 
-    executable:com.gildedrose.TexttestFixture
-    interpreter:java
+## Mob Programming Videos
+
+### Session 1 – Characterization Tests
+
+URL:
+
+### Session 2 – Refactoring
+
+URL:
+
+### Session 3 – TDD for Conjured Items
+
+URL:
