@@ -74,7 +74,7 @@ URL: https://youtu.be/AcB2VJ3NU5A
 
 URL: https://youtu.be/3IIO2plwJOU
 
-## Refactoring Session Timestamps
+ Refactoring Session Timestamps
 
 | Timestamp | Event |
 |-----------|-------|
