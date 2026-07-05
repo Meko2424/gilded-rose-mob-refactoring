@@ -74,12 +74,14 @@ URL: https://youtu.be/AcB2VJ3NU5A
 
 URL: https://youtu.be/3IIO2plwJOU
 
-### Session Timestaps:
-00:03 - Mekonnen Kindo
-12:25 - Joseph Pentecost
-43:42 - Antoine Davis
-1:08:51 - April Breedlove
-1:15:00 - All unit tests pass following the refactoring session.
+Refactoring Session Timestamps
+
+Timestamp	Event
+00:03	Mekonnen Kindo begins driving
+12:25	Joseph Pentecost begins driving
+43:42	Antoine Davis begins driving
+1:08:51	April Breedlove begins driving
+1:15:00	All unit tests pass following the refactoring session
 
 ### Session 3 – TDD for Conjured Items
 
