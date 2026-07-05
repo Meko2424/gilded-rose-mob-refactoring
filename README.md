@@ -74,13 +74,13 @@ URL: https://youtu.be/AcB2VJ3NU5A
 
 URL: https://youtu.be/3IIO2plwJOU
 
-## Session Timestaps:
+Session Timestaps:
 00:03 - Mekonnen Kindo
 12:25 - Joseph Pentecost
 43:42 - Antoine Davis
 1:08:51 - April Breedlove
 
-## Key Milestone:
+Key Milestone:
 1:15:00 - All unit tests pass following the refactoring session.
 
 ### Session 3 – TDD for Conjured Items
