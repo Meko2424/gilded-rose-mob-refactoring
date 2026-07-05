@@ -8,55 +8,87 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        for (int i = 0; i < items.length; i++) {
-            if (!items[i].name.equals("Aged Brie")
-                    && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                if (items[i].quality > 0) {
-                    if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                        items[i].quality = items[i].quality - 1;
-                    }
-                }
-            } else {
-                if (items[i].quality < 50) {
-                    items[i].quality = items[i].quality + 1;
+        for (Item item : items) {
+            normalItemQuality(item);
+            conjuredItemQuality(item);
+            passQuality(item);
+            brieQuality(item);
+        }
+    }
 
-                    if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (items[i].sellIn < 11) {
-                            if (items[i].quality < 50) {
-                                items[i].quality = items[i].quality + 1;
-                            }
-                        }
-
-                        if (items[i].sellIn < 6) {
-                            if (items[i].quality < 50) {
-                                items[i].quality = items[i].quality + 1;
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                items[i].sellIn = items[i].sellIn - 1;
-            }
-
-            if (items[i].sellIn < 0) {
-                if (!items[i].name.equals("Aged Brie")) {
-                    if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (items[i].quality > 0) {
-                            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                                items[i].quality = items[i].quality - 1;
-                            }
-                        }
-                    } else {
-                        items[i].quality = items[i].quality - items[i].quality;
-                    }
-                } else {
-                    if (items[i].quality < 50) {
-                        items[i].quality = items[i].quality + 1;
-                    }
-                }
+    private void normalItemQuality(Item item) {
+        if (!isBrie(item) && !isPasses(item) && !isSulfuras(item) && !isConjuredItem(item)) {
+            decreaseQuality(item);
+            item.sellIn--;
+            if (item.sellIn < 0 && item.quality > 0) {
+                decreaseQuality(item);
             }
         }
+    }
+
+    private void conjuredItemQuality(Item item) {
+        if (isConjuredItem(item)) {
+            decreaseQuality(item);
+            decreaseQuality(item);
+            item.sellIn--;
+            if (item.sellIn < 0 && item.quality > 0) {
+                decreaseQuality(item);
+                decreaseQuality(item);
+            }
+        }
+    }
+
+    private void passQuality(Item item) {
+        if(isPasses(item)) {
+            increaseQuality(item);
+            if (item.sellIn < 11) {
+                increaseQuality(item);
+            }
+            if (item.sellIn < 6) {
+                increaseQuality(item);
+            }
+            item.sellIn--;
+            if(item.sellIn < 0) {
+                item.quality = 0;
+            }
+        }
+    }
+
+    private void brieQuality(Item item) {
+        if (isBrie(item)) {
+            increaseQuality(item);
+            item.sellIn--;
+            if (item.sellIn < 0) {
+                increaseQuality(item);
+            }
+        }
+    }
+
+    private void increaseQuality(Item item) {
+        if (item.quality < 50) {
+            item.quality++;
+        }
+    }
+
+    private void decreaseQuality(Item item) {
+        if (item.quality > 0) {
+            item.quality--;
+        }
+    }
+
+    private boolean isSulfuras(Item item) {
+        return item.name.equals("Sulfuras, Hand of Ragnaros");
+    }
+
+    private boolean isBrie(Item item) {
+        return item.name.equals("Aged Brie");
+    }
+
+    private boolean isPasses(Item item) {
+        return item.name.equals("Backstage passes to a TAFKAL80ETC concert");
+    }
+
+    private boolean isConjuredItem(Item item) {
+        return item.name.equals("Conjured Item");
     }
 }

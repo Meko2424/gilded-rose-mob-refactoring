@@ -52,6 +52,8 @@ class GildedRoseTest {
 
         assertTrue(items[0].sellIn < initialSellIn);
         assertTrue(items[0].quality > initialQuality);
+
+
     }
 
     @Test
@@ -120,4 +122,25 @@ class GildedRoseTest {
         assertEquals(80, items[0].quality);
     }
 
+    @Test
+    void conjuredItemsDegradeTwiceAsFastAsNormalItems(){
+        Item [] items =  new Item[] {new Item("Conjured Item", 10, 20)};
+
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+
+        assertEquals(9, items[0].sellIn);
+        assertEquals(18, items[0].quality);
+    }
+
+    @Test
+    void conjuredItemsDegradeByFourAfterSellInPasses(){
+        Item [] items =  new Item[] {new Item("Conjured Item", 0, 20)};
+
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+
+        assertEquals(-1, items[0].sellIn);
+        assertEquals(16, items[0].quality);
+    }
 }
