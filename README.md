@@ -74,7 +74,7 @@ URL: https://youtu.be/AcB2VJ3NU5A
 
 URL: https://youtu.be/3IIO2plwJOU
 
-# Session Timestaps:
+#### Session Timestaps:
 00:03 - Mekonnen Kindo
 12:25 - Joseph Pentecost
 43:42 - Antoine Davis
