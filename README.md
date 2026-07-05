@@ -68,7 +68,7 @@ The test execution results are included as:
 
 ### Session 1 – Characterization Tests
 
-URL:
+URL: https://youtu.be/AcB2VJ3NU5A
 
 ### Session 2 – Refactoring
 
