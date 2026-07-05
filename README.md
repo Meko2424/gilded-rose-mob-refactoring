@@ -26,7 +26,7 @@ Our team used the following tools:
 - GitHub for version control and collaboration
 - Microsoft Teams for mob programming sessions and team communication
 - IntelliJ IDEA IDE to write, debug, test, and maintain code efficiently
-- IntelliJ' CodeTogether to simultaneously edit the Gilded Rose code
+- IntelliJ's CodeTogether to simultaneously edit the Gilded Rose code
 
 ## Rationale
 
